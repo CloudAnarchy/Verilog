@@ -1,0 +1,39 @@
+$date
+	Mon Nov 30 21:18:36 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module home_work1_tb $end
+$var wire 1 ! z $end
+$var reg 1 " x $end
+$var reg 1 # y $end
+$scope module hw4 $end
+$var wire 1 $ a $end
+$var wire 1 " x $end
+$var wire 1 # y $end
+$var wire 1 ! z $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+1#
+1"
+0!
+$end
+#20
+0#
+0"
+#40
+1$
+1#
+#60
+1!
+0#
+1"
+#80

@@ -1,0 +1,26 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7fffd4c13dd0 .scope module, "home_work4" "home_work4" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "x"
+    .port_info 1 /INPUT 1 "y"
+    .port_info 2 /INPUT 1 "z"
+o0x7f5639600048 .functor BUFZ 1, C4<z>; HiZ drive
+o0x7f5639600078 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x7fffd4c218a0 .functor XOR 1, o0x7f5639600048, o0x7f5639600078, C4<0>, C4<0>;
+L_0x7fffd4c219a0 .functor AND 1, L_0x7fffd4c218a0, o0x7f5639600048, C4<1>, C4<1>;
+v0x7fffd4c13fa0_0 .net "a", 0 0, L_0x7fffd4c218a0;  1 drivers
+v0x7fffd4c21600_0 .net "x", 0 0, o0x7f5639600048;  0 drivers
+v0x7fffd4c216c0_0 .net "y", 0 0, o0x7f5639600078;  0 drivers
+v0x7fffd4c21760_0 .net "z", 0 0, L_0x7fffd4c219a0;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "home_work4.v";

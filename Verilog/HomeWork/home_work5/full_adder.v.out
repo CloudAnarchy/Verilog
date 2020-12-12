@@ -1,0 +1,57 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7fffefd9cd80 .scope module, "full_adder" "full_adder" 2 3;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "Sum"
+    .port_info 1 /OUTPUT 1 "Cout"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+    .port_info 4 /INPUT 1 "Cin"
+L_0x7fffefdaf8d0 .functor OR 1, L_0x7fffefdaf7f0, L_0x7fffefdaf610, C4<0>, C4<0>;
+o0x7f2b9dd901f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x7fffefdaee30_0 .net "Cin", 0 0, o0x7f2b9dd901f8;  0 drivers
+v0x7fffefdaeef0_0 .net "Cout", 0 0, L_0x7fffefdaf8d0;  1 drivers
+v0x7fffefdaef90_0 .net "Sum", 0 0, L_0x7fffefdaf6f0;  1 drivers
+o0x7f2b9dd90078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x7fffefdaf090_0 .net "a", 0 0, o0x7f2b9dd90078;  0 drivers
+o0x7f2b9dd900a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x7fffefdaf160_0 .net "b", 0 0, o0x7f2b9dd900a8;  0 drivers
+v0x7fffefdaf250_0 .net "ha_1_cout", 0 0, L_0x7fffefdaf610;  1 drivers
+v0x7fffefdaf320_0 .net "ha_1_sum", 0 0, L_0x7fffefdaf4e0;  1 drivers
+v0x7fffefdaf410_0 .net "ha_2_cout", 0 0, L_0x7fffefdaf7f0;  1 drivers
+S_0x7fffefd9cf80 .scope module, "U0" "half_adder" 2 7, 3 1 0, S_0x7fffefd9cd80;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "Sum"
+    .port_info 1 /OUTPUT 1 "Cout"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+L_0x7fffefdaf4e0 .functor XOR 1, o0x7f2b9dd90078, o0x7f2b9dd900a8, C4<0>, C4<0>;
+L_0x7fffefdaf610 .functor AND 1, o0x7f2b9dd90078, o0x7f2b9dd900a8, C4<1>, C4<1>;
+v0x7fffefd9e190_0 .net "Cout", 0 0, L_0x7fffefdaf610;  alias, 1 drivers
+v0x7fffefdae520_0 .net "Sum", 0 0, L_0x7fffefdaf4e0;  alias, 1 drivers
+v0x7fffefdae5e0_0 .net "a", 0 0, o0x7f2b9dd90078;  alias, 0 drivers
+v0x7fffefdae6b0_0 .net "b", 0 0, o0x7f2b9dd900a8;  alias, 0 drivers
+S_0x7fffefdae820 .scope module, "U1" "half_adder" 2 8, 3 1 0, S_0x7fffefd9cd80;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "Sum"
+    .port_info 1 /OUTPUT 1 "Cout"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+L_0x7fffefdaf6f0 .functor XOR 1, L_0x7fffefdaf4e0, o0x7f2b9dd901f8, C4<0>, C4<0>;
+L_0x7fffefdaf7f0 .functor AND 1, L_0x7fffefdaf4e0, o0x7f2b9dd901f8, C4<1>, C4<1>;
+v0x7fffefdaea80_0 .net "Cout", 0 0, L_0x7fffefdaf7f0;  alias, 1 drivers
+v0x7fffefdaeb40_0 .net "Sum", 0 0, L_0x7fffefdaf6f0;  alias, 1 drivers
+v0x7fffefdaec00_0 .net "a", 0 0, L_0x7fffefdaf4e0;  alias, 1 drivers
+v0x7fffefdaed00_0 .net "b", 0 0, o0x7f2b9dd901f8;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "full_adder.v";
+    "./half_adder.v";
